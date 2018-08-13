@@ -30,10 +30,13 @@ function handleEvent(event) {
   
   
     if(event.message.text == "hai"){
-      const echo = { type: 'text', text: "Halo juga :)·" };
+      const echo = { type: 'text', text: "halo tampan :)·" };
       return client.replyMessage(event.replyToken, echo);
-    }else if(event.message.text.equalsIgnoreCase("apakah")){
-    
+    }else if(event.message.text == "apakah"){
+      var jawaban = ['Iya', 'Tidak']; 
+      var rand = jawaban[Math.floor(Math.random() * jawaban.length)];
+      const echo = { type: 'text', text: rand };
+      return client.replyMessage(event.replyToken, echo);
     }
     // const echo = { type: 'text', text: randomWords() };
     // return client.replyMessage(event.replyToken, echo);
