@@ -23,5 +23,7 @@
     "node",
     "glitch",
     "express"
+    "@line/bot-sdk"
+    "axios"
   ]
 }
