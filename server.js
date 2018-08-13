@@ -32,10 +32,11 @@ function handleEvent(event) {
     if(event.message.text == "hai"){
       const echo = { type: 'text', text: "Halo juga :)·" };
       return client.replyMessage(event.replyToken, echo);
+    }else if(event.message.text.equalsIgnoreCase("apakah")){
+    
     }
-  
-    const echo = { type: 'text', text: randomWords() };
-    return client.replyMessage(event.replyToken, echo);
+    // const echo = { type: 'text', text: randomWords() };
+    // return client.replyMessage(event.replyToken, echo);
 }
 
 
