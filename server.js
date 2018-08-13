@@ -1,6 +1,7 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 const axios = require('axios');
+const randomWords = require('random-words');
 
 const config = {
   channelAccessToken: "3MMH93Gsk8BHnhk4ht4dtSsVp3UCbXBCI0KPcaDs0qDIoA/9BzvYC6cCde7oYNb3QFvOyru/5ImfWQF/iQ3FLbMsIX7ZoIcApM2fsk3l2pGPcZaoS31epFmXb8iOlpWc0qOXnGu/SrBv+8UmnHeiNgdB04t89/1O/w1cDnyilFU=",
@@ -25,14 +26,19 @@ app.post('/callback', line.middleware(config), (req, res) => {
 
 function handleEvent(event) {
   
+  
+  
+  
     if(event.message.text == "hai"){
       const echo = { type: 'text', text: "Halo juga :)·" };
       return client.replyMessage(event.replyToken, echo);
     }
-
-    const echo = { type: 'text', text: "Saya tidak mengerti, saya simpan dulu" };
+  
+    const echo = { type: 'text', text: randomWords() };
     return client.replyMessage(event.replyToken, echo);
 }
+
+
 
 // listen on port
 const port = 3000;
